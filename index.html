@@ -9,25 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 font-['Inter'] antialiased overflow-x-hidden text-slate-900">
+<body class="bg-slate-50 font-['Inter'] antialiased overflow-x-hidden">
 
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <img src="logo.png" alt="Logo" class="h-10 md:h-14 w-auto">
-            
+            <img src="logo.png" alt="Logo" class="h-10 md:h-14 w-auto object-contain">
             <div class="flex items-center gap-3">
                 <div class="flex bg-slate-100 p-1 rounded-full border border-slate-200 text-[10px] font-bold">
-                    <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full transition-all">EN</button>
-                    <button onclick="setLanguage('nl')" id="btn-nl" class="px-3 py-1 rounded-full transition-all">NL</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-2 py-1 rounded-full transition-all">EN</button>
+                    <button onclick="setLanguage('nl')" id="btn-nl" class="px-2 py-1 rounded-full transition-all">NL</button>
                 </div>
                 <button id="mobile-menu-btn" class="text-slate-700 p-2"><i class="fas fa-bars text-xl"></i></button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden bg-white border-b border-slate-200 flex flex-col font-semibold">
-            <a href="#about" class="px-6 py-4 border-b border-slate-50">About</a>
-            <a href="#services" class="px-6 py-4 border-b border-slate-50">Services</a>
-            <a href="#portfolio" class="px-6 py-4 border-b border-slate-50">Portfolio</a>
-            <a href="#contact" class="px-6 py-4 text-blue-600">Contact</a>
+            <a href="#about" class="px-6 py-4 border-b border-slate-50 text-slate-700">About</a>
+            <a href="#services" class="px-6 py-4 border-b border-slate-50 text-slate-700">Services</a>
+            <a href="#portfolio" class="px-6 py-4 border-b border-slate-50 text-slate-700">Portfolio</a>
+            <a href="#contact" class="px-6 py-4 text-blue-900 font-bold">Contact</a>
         </div>
     </nav>
 
@@ -36,56 +35,60 @@
             <img src="lucrare.jpg" class="w-full h-full object-cover opacity-40 animate-slow-zoom">
         </div>
         <div class="container mx-auto relative z-10 py-12">
-            <div class="max-w-3xl text-left">
+            <div class="max-w-3xl">
                 <span id="hero-tag" class="inline-block px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Rotterdam</span>
-                <h1 id="hero-title" class="text-white leading-tight mb-4 tracking-tight font-extrabold">Perfect Views for Your Home</h1>
-                <p id="hero-subtitle" class="text-slate-300 mb-8 max-w-xl leading-relaxed">Premium installation of windows and doors.</p>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="https://wa.me/40785570289" class="w-full sm:w-auto bg-green-600 text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center text-sm shadow-lg">
-                        <i class="fab fa-whatsapp mr-2 text-lg"></i> <span id="btn-wa-text">WhatsApp Direct</span>
+                <h1 id="hero-title" class="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight">Perfect Views for Your Home</h1>
+                <p id="hero-subtitle" class="text-base md:text-lg text-slate-300 mb-8 max-w-xl leading-relaxed">Premium installation of windows and doors with Dutch precision.</p>
+                <div class="flex flex-col sm:flex-row gap-3 text-center">
+                    <a href="https://wa.me/40785570289" class="w-full sm:w-auto bg-[#25D366] text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center text-sm transition-transform active:scale-95 shadow-lg shadow-green-900/20">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> <span id="btn-wa">WhatsApp Direct</span>
                     </a>
-                    <a href="#portfolio" id="btn-port-text" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-6 py-4 rounded-xl font-bold flex items-center justify-center text-sm">View Portfolio</a>
+                    <a href="#portfolio" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-6 py-4 rounded-xl font-bold flex items-center justify-center text-sm transition-transform active:scale-95">
+                        <span id="btn-port">View Portfolio</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 px-4 bg-white">
+    <section id="about" class="py-16 px-4 bg-white border-b">
         <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <img src="about-image.jpg" class="rounded-2xl shadow-lg w-full h-64 md:h-auto object-cover">
-            <div>
-                <h2 id="about-h2" class="text-2xl md:text-4xl font-bold mb-6 text-slate-800">About Us</h2>
-                <p id="about-p" class="text-slate-600 leading-relaxed"></p>
+            <div class="order-2 md:order-1">
+                <h2 id="about-h2" class="text-3xl font-bold text-[#1e3a8a] mb-6">Over DB Kozijnen</h2>
+                <p id="about-p" class="text-slate-600 leading-relaxed text-lg">Vakmanschap en precisie in elke montage.</p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="about-image.jpg" class="rounded-2xl shadow-xl w-full object-cover h-64 md:h-80 border-2 border-orange-500/20">
             </div>
         </div>
     </section>
 
     <section id="services" class="py-16 px-4 bg-slate-50">
         <div class="container mx-auto">
-            <h2 id="services-h2" class="text-2xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
-            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            <h2 id="services-h2" class="text-2xl md:text-4xl font-bold text-center mb-10 text-slate-800 tracking-tight tracking-tight">Our Services</h2>
+            <div id="services-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 </div>
         </div>
     </section>
 
     <section id="portfolio" class="py-16 px-4 bg-white">
         <div class="container mx-auto">
-            <h2 id="port-h2" class="text-2xl font-bold text-center mb-8">Portfolio</h2>
+            <h2 id="port-h2" class="text-2xl md:text-4xl font-bold text-center mb-10 text-slate-800">Before & After</h2>
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 </div>
         </div>
     </section>
 
     <footer id="contact" class="bg-slate-900 text-white py-12 px-6 text-center">
-        <h2 id="contact-h2" class="text-2xl font-bold mb-6">Discuss Your Project</h2>
+        <h2 id="contact-h2" class="text-2xl font-bold mb-6 tracking-tight tracking-tight">Discuss Your Project</h2>
         <div class="flex flex-col items-center gap-6">
             <a href="tel:+40785570289" class="text-2xl md:text-4xl font-extrabold text-blue-400">+40 785 570 289</a>
             <div class="flex flex-col gap-3 w-full max-w-xs">
-                 <a href="https://wa.me/40785570289" class="bg-green-600 p-4 rounded-xl font-bold text-sm">WhatsApp</a>
-                 <a href="https://www.facebook.com/darius.budeic" class="bg-blue-600 p-4 rounded-xl font-bold text-sm">Facebook</a>
+                 <a href="https://wa.me/40785570289" class="bg-[#25D366] p-4 rounded-xl font-bold text-sm">WhatsApp</a>
+                 <a href="https://www.facebook.com/darius.budeic" class="bg-[#1877F2] p-4 rounded-xl font-bold text-sm">Facebook</a>
             </div>
         </div>
-        <p id="gdpr-footer" class="mt-12 text-[10px] text-slate-500">GDPR Compliant | No data collected.</p>
+        <p id="gdpr-footer" class="mt-12 text-[10px] text-slate-500 italic">GDPR Compliant | No data collected.</p>
     </footer>
 
     <script src="script.js"></script>
