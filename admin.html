@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DB Admin | Portfolio Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white font-sans p-10">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-orange-500 text-center">Portfolio Project Generator</h1>
+        
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl">
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Project Title (ex: Villa Schiedam)</label>
+                    <input type="text" id="pTitle" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Location (ex: Rotterdam)</label>
+                    <input type="text" id="pLoc" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Before Image Name</label>
+                        <input type="text" id="pBefore" placeholder="before.jpg" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">After Image Name</label>
+                        <input type="text" id="pAfter" placeholder="after.jpg" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
+                    </div>
+                </div>
+                <button onclick="generateCode()" class="w-full bg-orange-600 hover:bg-orange-500 py-4 rounded-xl font-bold mt-4 transition-all">Generate Code Block</button>
+            </div>
+        </div>
+
+        <div id="resultArea" class="mt-10 hidden">
+            <p class="mb-2 text-green-400 font-bold">Copy this code into script.js inside the [ ] of projects:</p>
+            <pre id="outputCode" class="bg-black p-6 rounded-xl text-blue-400 overflow-x-auto border border-blue-900/50"></pre>
+        </div>
+    </div>
+
+    <script>
+        function generateCode() {
+            const title = document.getElementById('pTitle').value;
+            const loc = document.getElementById('pLoc').value;
+            const bef = document.getElementById('pBefore').value;
+            const aft = document.getElementById('pAfter').value;
+
+            const code = `{
+    title: "${title}",
+    location: "${loc}",
+    before: "${bef}",
+    after: "${aft}"
+},`;
+            
+            document.getElementById('outputCode').innerText = code;
+            document.getElementById('resultArea').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
