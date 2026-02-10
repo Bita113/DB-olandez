@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Kozijnen & Deuren | Window & Door Installation Rotterdam</title>
+    <meta name="description" content="Professional window and door installation services in Rotterdam. Quality craftsmanship, measurement, and transport. Contact us via WhatsApp or Facebook.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-900">
+                DB <span class="text-orange-500 underline decoration-2">Kozijnen & Deuren</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="setLanguage('en')" id="btn-en" class="font-bold text-blue-900 border-b-2 border-blue-900">EN</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="setLanguage('nl')" id="btn-nl" class="font-bold text-gray-500 hover:text-blue-900 transition">NL</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 bg-slate-900 text-white border-b-4 border-orange-500">
+        <div class="container mx-auto px-6 text-center">
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold mb-6">Expert Window & Door Installation in Rotterdam</h1>
+            <p id="hero-subtitle" class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Full-service solutions: from professional measurement to final installation. Quality that stands solid as a house.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://wa.me/40785570289" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center transition">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/darius.budeic" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center transition">
+                    <i class="fab fa-facebook mr-2 text-xl"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-6">
+        <h2 id="services-title" class="text-3xl font-bold text-center mb-16 underline decoration-orange-500">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-blue-900 hover:shadow-md transition">
+                <i class="fas fa-tools text-orange-500 text-3xl mb-4"></i>
+                <h3 id="s1-t" class="text-xl font-bold mb-3">Installation & Replacement</h3>
+                <p id="s1-p" class="text-gray-600">Complete removal of old frames and expert installation of new windows and doors.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-blue-900 hover:shadow-md transition">
+                <i class="fas fa-ruler-combined text-orange-500 text-3xl mb-4"></i>
+                <h3 id="s2-t" class="text-xl font-bold mb-3">Measurements</h3>
+                <p id="s2-p" class="text-gray-600">On-site professional measurements to ensure a perfect fit for every custom order.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-blue-900 hover:shadow-md transition">
+                <i class="fas fa-truck text-orange-500 text-3xl mb-4"></i>
+                <h3 id="s3-t" class="text-xl font-bold mb-3">Transport & Delivery</h3>
+                <p id="s3-p" class="text-gray-600">Safe transport of materials directly to your location in Rotterdam and surroundings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-xl flex flex-col md:flex-row">
+                <div class="bg-blue-900 text-white p-10 md:w-1/3 flex items-center justify-center text-center">
+                    <div id="why-badge" class="text-2xl font-bold italic">Kwaliteit die staat als een huis</div>
+                </div>
+                <div class="p-10 md:w-2/3">
+                    <h2 id="why-title" class="text-3xl font-bold mb-6 text-blue-900 text-center">Why Choose DB?</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span id="w1">Experienced local team in Rotterdam.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span id="w2">Direct coordination with premium manufacturers.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span id="w3">Clean, professional, and transparent work.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-6 text-center">
+        <h2 id="contact-title" class="text-3xl font-bold mb-6">Service Area</h2>
+        <p id="area-p" class="text-xl mb-12 text-gray-600">We serve <strong>Rotterdam</strong> and all surrounding areas.</p>
+        
+        <div class="bg-white border-2 border-dashed border-gray-300 p-10 rounded-2xl inline-block max-w-lg">
+            <h3 id="contact-h3" class="text-2xl font-bold mb-4">Ready to start?</h3>
+            <p id="contact-p" class="mb-8 text-gray-500">Contact us directly via WhatsApp or Facebook for a free quote based on your needs.</p>
+            <div class="flex flex-col gap-4">
+                <a href="tel:+40785570289" class="text-2xl font-bold text-blue-900">+40 785 570 289</a>
+                <a href="https://wa.me/40785570289" class="text-green-600 font-bold hover:underline">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p id="gdpr-text" class="text-sm mb-4">GDPR Compliance: This website does not use cookies, does not collect or store any personal data.</p>
+            <p class="text-xs">&copy; 2026 DB Kozijnen & Deuren. No physical office. Services only.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
