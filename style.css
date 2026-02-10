@@ -1,41 +1,16 @@
-/* Prevenire deformare imagini */
-img {
-    max-width: 100%;
-    height: auto;
-}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
 
-/* Fluid Typography - Textul se micșorează pe ecrane mici */
-#hero-title {
-    font-size: clamp(1.8rem, 8vw, 4rem);
-}
+#hero-title { font-size: clamp(2rem, 8vw, 4rem); }
 
-#hero-subtitle {
-    font-size: clamp(0.9rem, 4vw, 1.2rem);
-}
+.btn-active { background: white; color: #1e40af; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.btn-inactive { color: #64748b; }
 
-/* Fix pentru containerul mobil */
-.container {
-    max-width: 100% !important;
+@keyframes slow-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
 }
+.animate-slow-zoom { animation: slow-zoom 20s infinite alternate ease-in-out; }
 
-/* Animatie Menu */
-#mobile-menu.active {
-    display: flex;
-}
-
-/* Stil Butoane Limba */
-.btn-active {
-    background: white;
-    color: #1e40af; /* blue-800 */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.btn-inactive {
-    color: #64748b;
-}
-
-/* Stil carduri portofoliu pe mobil */
-.portfolio-card {
-    display: flex;
-    flex-direction: column; /* Pe mobil pozele stau una sub alta sau raman grupate */
-}
+/* Asigură-te că pozele nu depășesc containerul */
+img { max-width: 100%; height: auto; }
