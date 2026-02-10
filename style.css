@@ -1,0 +1,23 @@
+/* Custom smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom logo underline animation */
+.underline-animation {
+    position: relative;
+    display: inline-block;
+}
+
+/* Professional touch for buttons */
+a, button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem !important;
+    }
+}
