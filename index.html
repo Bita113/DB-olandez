@@ -2,61 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DB Kozijnen & Deuren | Premium Montage Rotterdam</title>
-    <meta name="description" content="Exclusieve montage van kozijnen en deuren in Rotterdam. Vakmanschap en kwaliteit.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DB Kozijnen & Deuren | Premium Montage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 font-['Inter']">
+<body class="bg-slate-50 font-['Inter'] antialiased overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#hero"><img src="logo.png" alt="DB Kozijnen & Deuren Logo" class="h-12 md:h-16 hover:scale-105 transition-transform duration-300"></a>
-            <div class="flex items-center space-x-6">
-                <div class="hidden md:flex space-x-8 font-semibold text-slate-700">
-                    <a href="#about" class="hover:text-blue-600 transition">About Us</a>
-                    <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                    <a href="#portfolio" class="hover:text-blue-600 transition">Portfolio</a>
-                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <img src="logo.png" alt="Logo" class="h-10 md:h-14 w-auto object-contain">
+            
+            <div class="flex items-center gap-3">
+                <div class="flex bg-slate-100 p-1 rounded-full border border-slate-200 text-[10px] font-bold">
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-2 py-1 rounded-full transition-all">EN</button>
+                    <button onclick="setLanguage('nl')" id="btn-nl" class="px-2 py-1 rounded-full transition-all">NL</button>
                 </div>
-                <div class="flex bg-slate-100 p-1 rounded-full border border-slate-200">
-                    <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full text-xs font-bold transition-all duration-300">EN</button>
-                    <button onclick="setLanguage('nl')" id="btn-nl" class="px-3 py-1 rounded-full text-xs font-bold transition-all duration-300">NL</button>
-                </div>
-                <button class="md:hidden text-slate-700 text-2xl" id="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button id="mobile-menu-btn" class="text-slate-700 p-2"><i class="fas fa-bars text-xl"></i></button>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md absolute top-full left-0 w-full shadow-lg hidden">
-            <a href="#about" class="block px-6 py-3 text-slate-700 hover:bg-slate-100 transition">About Us</a>
-            <a href="#services" class="block px-6 py-3 text-slate-700 hover:bg-slate-100 transition">Services</a>
-            <a href="#portfolio" class="block px-6 py-3 text-slate-700 hover:bg-slate-100 transition">Portfolio</a>
-            <a href="#contact" class="block px-6 py-3 text-slate-700 hover:bg-slate-100 transition">Contact</a>
+        <div id="mobile-menu" class="hidden bg-white border-b border-slate-200 flex flex-col font-semibold">
+            <a href="#about" class="px-6 py-4 border-b border-slate-50">About</a>
+            <a href="#services" class="px-6 py-4 border-b border-slate-50">Services</a>
+            <a href="#portfolio" class="px-6 py-4 border-b border-slate-50">Portfolio</a>
+            <a href="#contact" class="px-6 py-4 text-blue-600">Contact</a>
         </div>
     </nav>
 
-    <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900">
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 px-4 overflow-hidden bg-slate-900">
         <div class="absolute inset-0 z-0">
-            <img src="lucrare.jpg" class="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom">
+            <img src="lucrare.jpg" class="w-full h-full object-cover opacity-40 animate-slow-zoom">
         </div>
-        <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto relative z-10 py-12">
             <div class="max-w-3xl">
-                <span id="hero-tag" class="inline-block px-4 py-1 bg-blue-600 text-white text-sm font-bold rounded-full mb-6 uppercase tracking-widest animate-pulse">Rotterdam & Surroundings</span>
-                <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-                    Crafting <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">Perfect Views</span> for Your Home
+                <span id="hero-tag" class="inline-block px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Rotterdam</span>
+                <h1 id="hero-title" class="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight">
+                    Perfect Views for Your Home
                 </h1>
-                <p id="hero-subtitle" class="text-xl text-slate-300 mb-10 leading-relaxed">
-                    Premium installation of windows and doors. We combine Dutch precision with high-end craftsmanship to secure and beautify your residence.
+                <p id="hero-subtitle" class="text-base md:text-lg text-slate-300 mb-8 max-w-xl leading-relaxed">
+                    Premium installation of windows and doors with Dutch precision.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/40785570289" class="group bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center transition-all shadow-lg shadow-green-900/20 transform hover:scale-105">
-                        <i class="fab fa-whatsapp mr-3 text-xl"></i> WhatsApp Direct
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="https://wa.me/40785570289" class="w-full sm:w-auto bg-green-600 text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center text-sm transition-transform active:scale-95 shadow-lg">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i> WhatsApp Direct
                     </a>
-                    <a href="#portfolio" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-xl font-bold flex items-center justify-center transition-all transform hover:scale-105">
+                    <a href="#portfolio" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-6 py-4 rounded-xl font-bold flex items-center justify-center text-sm transition-transform active:scale-95">
                         View Portfolio
                     </a>
                 </div>
@@ -64,155 +56,39 @@
         </div>
     </section>
 
-    <div class="container mx-auto px-6 -mt-16 relative z-20">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-3xl font-extrabold text-blue-900 mb-1">100%</div>
-                <div class="text-slate-500 text-sm font-semibold uppercase">Quality</div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-3xl font-extrabold text-blue-900 mb-1">Rotterdam</div>
-                <div class="text-slate-500 text-sm font-semibold uppercase">Local Service</div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-3xl font-extrabold text-blue-900 mb-1">Professional</div>
-                <div class="text-slate-500 text-sm font-semibold uppercase">Team</div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <div class="text-3xl font-extrabold text-blue-900 mb-1">Custom</div>
-                <div class="text-slate-500 text-sm font-semibold uppercase">Solutions</div>
-            </div>
-        </div>
-    </div>
-
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <img src="about-image.jpg" alt="DB Kozijnen & Deuren Team" class="rounded-3xl shadow-2xl border border-slate-200">
+    <section id="services" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h2 id="services-h2" class="text-2xl md:text-4xl font-bold text-center mb-10 text-slate-800 tracking-tight">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+                    <i class="fas fa-tools text-blue-600 text-2xl mb-4"></i>
+                    <h3 id="s1-t" class="font-bold text-lg mb-2">Installation</h3>
+                    <p id="s1-p" class="text-sm text-slate-600">Professional montage for all types of frames.</p>
                 </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <h2 id="about-h2" class="text-4xl font-bold text-blue-900 mb-6">About DB Kozijnen & Deuren</h2>
-                    <p id="about-p1" class="text-lg text-slate-700 mb-4 leading-relaxed">
-                        DB Kozijnen & Deuren is your trusted partner for premium window and door installation services in Rotterdam and its surrounding areas. With years of experience and a passion for craftsmanship, we bring warmth, security, and beauty to your home.
-                    </p>
-                    <p id="about-p2" class="text-lg text-slate-700 leading-relaxed">
-                        We pride ourselves on a transparent approach, meticulous on-site measurements, and direct collaboration with leading European manufacturers. Our goal is to offer tailored solutions that perfectly match your vision and enhance the value of your property.
-                    </p>
-                    <a href="#contact" class="inline-block mt-8 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-md shadow-orange-900/20 transform hover:scale-105">
-                        <i class="fas fa-arrow-right mr-2"></i> Get a Free Consultation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 bg-blue-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 id="services-h2" class="text-4xl font-bold mb-4" data-aos="fade-down">Our Expert Services</h2>
-            <p id="services-p" class="text-blue-200 text-lg mb-16" data-aos="fade-down" data-aos-delay="200">
-                Comprehensive solutions from planning to flawless execution.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:-translate-y-3 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-hand-sparkles text-orange-400 text-5xl mb-6"></i>
-                    <h3 id="s1-t" class="text-2xl font-bold mb-3">Professional Installation</h3>
-                    <p id="s1-p" class="text-blue-100 leading-relaxed">
-                        Meticulous installation of all types of windows and doors, ensuring optimal insulation and longevity.
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:-translate-y-3 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-recycle text-orange-400 text-5xl mb-6"></i>
-                    <h3 id="s2-t" class="text-2xl font-bold mb-3">Removal & Replacement</h3>
-                    <p id="s2-p" class="text-blue-100 leading-relaxed">
-                        Efficient removal of old frames and seamless replacement with modern, energy-efficient solutions.
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:-translate-y-3 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-ruler-combined text-orange-400 text-5xl mb-6"></i>
-                    <h3 id="s3-t" class="text-2xl font-bold mb-3">On-site Measurements</h3>
-                    <p id="s3-p" class="text-blue-100 leading-relaxed">
-                        Precise, professional measurements taken at your location to guarantee a perfect custom fit.
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:-translate-y-3 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-industry text-orange-400 text-5xl mb-6"></i>
-                    <h3 id="s4-t" class="text-2xl font-bold mb-3">Manufacturer Coordination</h3>
-                    <p id="s4-p" class="text-blue-100 leading-relaxed">
-                        Direct communication with trusted manufacturers for custom production tailored to your specific requirements.
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:-translate-y-3 transition-all duration-300" data-aos="zoom-in" data-aos-delay="500">
-                    <i class="fas fa-truck-moving text-orange-400 text-5xl mb-6"></i>
-                    <h3 id="s5-t" class="text-2xl font-bold mb-3">Secure Transport</h3>
-                    <p id="s5-p" class="text-blue-100 leading-relaxed">
-                        Safe and timely transport of all materials directly to your installation site.
-                    </p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl transform hover:-translate-y-3 transition-all duration-300" data-aos="zoom-in" data-aos-delay="600">
-                    <i class="fas fa-wrench text-orange-400 text-5xl mb-6"></i>
-                    <h3 id="s6-t" class="text-2xl font-bold mb-3">Full-Service Solutions</h3>
-                    <p id="s6-p" class="text-blue-100 leading-relaxed">
-                        From initial consultation to final inspection, we manage every detail of your window and door project.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 id="port-h2" class="text-4xl font-bold mb-4 text-blue-900" data-aos="fade-down">Our Craftsmanship</h2>
-            <p id="port-p" class="text-slate-500 text-lg mb-16" data-aos="fade-down" data-aos-delay="200">
-                Real transformations from our recent projects. Quality that stands solid as a house.
-            </p>
-            
-            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-slate-900 text-white py-20">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <h2 id="contact-h2" class="text-4xl font-bold mb-6">Let's discuss your project</h2>
-                    <p id="contact-p1" class="text-slate-400 text-lg mb-8 text-balance">
-                        We offer free consultations and professional measurements in Rotterdam. No obligations, just expert advice.
-                    </p>
-                    <div class="flex items-center space-x-4 mb-8">
-                        <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-2xl animate-pulse-fade">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <span class="text-3xl font-bold">+40 785 570 289</span>
-                    </div>
+    <section id="portfolio" class="py-16 px-4 bg-slate-50">
+        <div class="container mx-auto">
+            <h2 id="port-h2" class="text-2xl font-bold text-center mb-8">Before & After</h2>
+            <div id="portfolio-grid" class="grid grid-cols-1 gap-6">
                 </div>
-                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm shadow-xl" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <h4 id="contact-h4" class="text-xl font-bold mb-4">Quick Links</h4>
-                    <div class="grid grid-cols-1 gap-4">
-                        <a href="https://wa.me/40785570289" class="flex items-center text-slate-300 hover:text-white transition group">
-                            <i class="fab fa-whatsapp w-8 text-green-500 group-hover:scale-110 transition-transform"></i> <span id="contact-link1">Get a Quote via WhatsApp</span>
-                        </a>
-                        <a href="https://www.facebook.com/darius.budeic" class="flex items-center text-slate-300 hover:text-white transition group">
-                            <i class="fab fa-facebook w-8 text-blue-500 group-hover:scale-110 transition-transform"></i> <span id="contact-link2">Follow us on Facebook</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-20 pt-8 border-t border-white/10 text-center text-slate-500 text-sm">
-                <p id="gdpr-footer">DB Kozijnen & Deuren | No physical office | GDPR Compliant (No Data Collection)</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-900 text-white py-12 px-6 text-center">
+        <h2 id="contact-h2" class="text-2xl font-bold mb-6 tracking-tight">Discuss Your Project</h2>
+        <div class="flex flex-col items-center gap-6">
+            <a href="tel:+40785570289" class="text-2xl md:text-4xl font-extrabold text-blue-400">+40 785 570 289</a>
+            <div class="flex flex-col gap-3 w-full max-w-xs">
+                 <a href="https://wa.me/40785570289" class="bg-green-600 p-4 rounded-xl font-bold text-sm">WhatsApp</a>
+                 <a href="https://www.facebook.com/darius.budeic" class="bg-blue-600 p-4 rounded-xl font-bold text-sm">Facebook</a>
             </div>
         </div>
+        <p id="gdpr-footer" class="mt-12 text-[10px] text-slate-500">GDPR Compliant | No data collected.</p>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true, // Only animate once
-            duration: 800, // Animation duration
-            easing: 'ease-out' // Animation easing
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
