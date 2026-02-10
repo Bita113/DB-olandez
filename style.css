@@ -1,16 +1,47 @@
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; }
+/* Prevenire deformare imagini */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-#hero-title { font-size: clamp(2rem, 8vw, 4rem); }
+/* Fluid Typography */
+#hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+}
 
-.btn-active { background: white; color: #1e40af; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-.btn-inactive { color: #64748b; }
+#hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+}
 
+/* Fix pentru containerul mobil */
+.container {
+    max-width: 100% !important;
+}
+
+/* Animatie Hero */
 @keyframes slow-zoom {
     from { transform: scale(1); }
     to { transform: scale(1.1); }
 }
 .animate-slow-zoom { animation: slow-zoom 20s infinite alternate ease-in-out; }
 
-/* Asigură-te că pozele nu depășesc containerul */
-img { max-width: 100%; height: auto; }
+/* Stil Butoane Limba */
+.btn-active {
+    background: white;
+    color: #1e3a8a; /* Albastru Premium */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-inactive {
+    color: #94a3b8;
+}
+
+/* Scroll Fin */
+html { scroll-behavior: smooth; }
+
+/* Carduri Servicii */
+.service-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid #f97316; /* Portocaliul firmei */
+}
+.service-card:hover { transform: translateY(-5px); }
