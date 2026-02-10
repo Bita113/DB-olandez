@@ -2,60 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DB Admin | Portfolio Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Kozijnen & Deuren | Professional Window Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-900 text-white font-sans p-10">
-    <div class="max-w-2xl mx-auto">
-        <h1 class="text-3xl font-bold mb-6 text-orange-500 text-center">Portfolio Project Generator</h1>
-        
-        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl">
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium mb-1">Project Title (ex: Villa Schiedam)</label>
-                    <input type="text" id="pTitle" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
+<body class="bg-white font-['Inter'] text-slate-900 antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" class="h-10 w-auto" alt="DB Logo">
+                <div class="h-8 w-[1px] bg-slate-200 hidden sm:block"></div>
+                <span class="font-bold text-lg tracking-tight hidden sm:block">Kozijnen & Deuren</span>
+            </div>
+            
+            <div class="flex items-center gap-8">
+                <div class="hidden lg:flex gap-8 text-[13px] font-semibold uppercase tracking-wider text-slate-600">
+                    <a href="#services" class="hover:text-orange-600 transition">Services</a>
+                    <a href="#why-us" class="hover:text-orange-600 transition">Why Us</a>
+                    <a href="#area" class="hover:text-orange-600 transition">Service Area</a>
+                    <a href="#contact" class="hover:text-orange-600 transition">Contact</a>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium mb-1">Location (ex: Rotterdam)</label>
-                    <input type="text" id="pLoc" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
+                <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-full border border-slate-200">
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-1.5 rounded-full text-[11px] font-bold transition-all shadow-sm">EN</button>
+                    <button onclick="setLanguage('nl')" id="btn-nl" class="px-4 py-1.5 rounded-full text-[11px] font-bold transition-all">NL</button>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Before Image Name</label>
-                        <input type="text" id="pBefore" placeholder="before.jpg" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">After Image Name</label>
-                        <input type="text" id="pAfter" placeholder="after.jpg" class="w-full bg-slate-700 border-none rounded-lg p-3 text-white">
-                    </div>
-                </div>
-                <button onclick="generateCode()" class="w-full bg-orange-600 hover:bg-orange-500 py-4 rounded-xl font-bold mt-4 transition-all">Generate Code Block</button>
             </div>
         </div>
+    </nav>
 
-        <div id="resultArea" class="mt-10 hidden">
-            <p class="mb-2 text-green-400 font-bold">Copy this code into script.js inside the [ ] of projects:</p>
-            <pre id="outputCode" class="bg-black p-6 rounded-xl text-blue-400 overflow-x-auto border border-blue-900/50"></pre>
+    <section class="relative min-h-[90vh] flex items-center pt-24 px-6 bg-[#1e293b] overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="lucrare.jpg" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e293b]"></div>
         </div>
-    </div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                    </span>
+                    <span id="hero-loc" class="text-[10px] font-bold uppercase tracking-[0.2em]">Rotterdam, Netherlands</span>
+                </div>
+                <h1 id="hero-title" class="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
+                    Premium Window & Door Installation <span class="text-orange-500">in Rotterdam</span>
+                </h1>
+                <p id="hero-subtitle" class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed font-light">
+                    Transforming homes with expert craftsmanship. High-quality PVC and Aluminum systems installed with Dutch precision.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/40785570289" class="bg-[#22c55e] hover:bg-[#16a34a] text-white px-8 py-5 rounded-2xl font-bold flex items-center justify-center transition-all shadow-xl shadow-green-900/20 hover:-translate-y-1">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i> <span id="btn-wa">Contact via WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com/darius.budeic" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-5 rounded-2xl font-bold flex items-center justify-center transition-all hover:-translate-y-1">
+                        <i class="fab fa-facebook mr-3 text-xl"></i> <span id="btn-fb">Visit Our Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        function generateCode() {
-            const title = document.getElementById('pTitle').value;
-            const loc = document.getElementById('pLoc').value;
-            const bef = document.getElementById('pBefore').value;
-            const aft = document.getElementById('pAfter').value;
+    <section id="services" class="py-24 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-20">
+                <p class="text-orange-600 font-bold text-xs uppercase tracking-[0.4em] mb-4">What We Do</p>
+                <h2 id="services-h2" class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">Our Professional Services</h2>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                </div>
+        </div>
+    </section>
 
-            const code = `{
-    title: "${title}",
-    location: "${loc}",
-    before: "${bef}",
-    after: "${aft}"
-},`;
-            
-            document.getElementById('outputCode').innerText = code;
-            document.getElementById('resultArea').classList.remove('hidden');
-        }
-    </script>
+    <section id="why-us" class="py-24 px-6 bg-slate-50">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-orange-600 font-bold text-xs uppercase tracking-[0.4em] mb-4">Why DB Kozijnen</p>
+                    <h2 id="why-h2" class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-8">Built on Trust & 10+ Years of Craftsmanship</h2>
+                    <div id="why-grid" class="space-y-6">
+                        </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-orange-500/10 rounded-[2rem] blur-2xl"></div>
+                    <img src="lucrare2.jpg" class="relative rounded-[2rem] shadow-2xl w-full h-[500px] object-cover border border-slate-200">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white overflow-hidden">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl text-left">
+                    <h2 id="reviews-h2" class="text-3xl md:text-5xl font-extrabold text-slate-900">What Our Clients Say</h2>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 px-6 py-3 rounded-2xl border border-slate-100">
+                    <div class="text-orange-500 flex gap-1">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="font-bold text-slate-900">5.0 / 5.0 Rating</span>
+                </div>
+            </div>
+            <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-[#0f172a] text-white py-24 px-6 text-center relative overflow-hidden">
+        <div class="container mx-auto relative z-10">
+            <h2 id="contact-h2" class="text-4xl md:text-6xl font-extrabold mb-10 tracking-tight">Ready to start your project?</h2>
+            <div class="flex flex-col items-center gap-8">
+                <a href="tel:+40785570289" class="text-3xl md:text-5xl font-bold text-orange-500 hover:text-orange-400 transition tracking-tighter tracking-tighter tracking-tighter tracking-tighter">+40 785 570 289</a>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://wa.me/40785570289" class="bg-[#22c55e] px-10 py-4 rounded-2xl font-bold flex items-center transition-transform hover:scale-105">WhatsApp</a>
+                    <a href="https://www.facebook.com/darius.budeic" class="bg-[#1877f2] px-10 py-4 rounded-2xl font-bold flex items-center transition-transform hover:scale-105">Facebook</a>
+                </div>
+            </div>
+            <p id="gdpr" class="mt-20 text-[10px] text-slate-500 uppercase tracking-widest">No data collected • GDPR Compliant</p>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-orange-600/10 blur-[120px] rounded-full"></div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
