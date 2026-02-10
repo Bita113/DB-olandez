@@ -1,47 +1,16 @@
-/* Prevenire deformare imagini */
-img {
-    max-width: 100%;
-    height: auto;
+#hero-title { font-size: clamp(2.5rem, 8vw, 6rem); }
+.scale-hover:hover { transform: scale(1.05); }
+.btn-active { background: #f97316; color: white; }
+
+/* Animatie pentru glow portocaliu */
+.service-card:hover {
+    box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.1);
 }
 
-/* Fluid Typography */
-#hero-title {
-    font-size: clamp(2rem, 8vw, 4rem);
-}
+/* Efect Glassmorphism */
+nav { border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-#hero-subtitle {
-    font-size: clamp(1rem, 4vw, 1.25rem);
+/* Fix mobil text */
+@media (max-width: 768px) {
+    #hero-title { line-height: 1.2; }
 }
-
-/* Fix pentru containerul mobil */
-.container {
-    max-width: 100% !important;
-}
-
-/* Animatie Hero */
-@keyframes slow-zoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-}
-.animate-slow-zoom { animation: slow-zoom 20s infinite alternate ease-in-out; }
-
-/* Stil Butoane Limba */
-.btn-active {
-    background: white;
-    color: #1e3a8a; /* Albastru Premium */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.btn-inactive {
-    color: #94a3b8;
-}
-
-/* Scroll Fin */
-html { scroll-behavior: smooth; }
-
-/* Carduri Servicii */
-.service-card {
-    transition: all 0.3s ease;
-    border-left: 4px solid #f97316; /* Portocaliul firmei */
-}
-.service-card:hover { transform: translateY(-5px); }
